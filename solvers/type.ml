@@ -203,7 +203,7 @@ let canonical_type t =
   let rec canon q =
     match q with
     | TID(i) -> (try TID(List.Assoc.find_exn ~equal:(=) !substitution i)
-     with Not_found | Not_found_s _ ->
+		 with Not_found | Not_found_s _ ->
                    substitution := (i,!next)::!substitution; next := (1+ !next); TID(!next-1))
     | TCon(k,a,_) -> kind k (List.map ~f:canon a)
   in canon t
