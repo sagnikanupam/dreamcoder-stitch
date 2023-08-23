@@ -1,0 +1,285 @@
+﻿output
+HIT te0 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0))) $0)) ; log prior = -4.105275 ; log likelihood = 0.000000
+MISS te1
+MISS te2
+MISS te3
+MISS te4
+MISS te5
+MISS te6
+HIT te7 w/ (lambda (#(lambda (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)))) (mathDomain_swap (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0) mathDomain_1))) $0)) ; log prior = -5.741349 ; log likelihood = 0.000000
+MISS te8
+MISS te9
+MISS te10
+MISS te11
+MISS te12
+MISS te13
+MISS te14
+MISS te15
+MISS te16
+MISS te17
+MISS te18
+MISS te19
+MISS te20
+HIT te21 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0))) $0)) ; log prior = -4.105402 ; log likelihood = 0.000000
+MISS te22
+MISS te23
+MISS te24
+MISS te25
+MISS te26
+MISS te27
+HIT te28 w/ (lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) $0)) ; log prior = -3.856776 ; log likelihood = 0.000000
+MISS te29
+MISS te30
+MISS te31
+MISS te32
+MISS te33
+MISS te34
+MISS te35
+MISS te36
+MISS te37
+HIT te38 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) (#(lambda (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)))) (mathDomain_swap (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0) mathDomain_1))) $0))) ; log prior = -8.893248 ; log likelihood = 0.000000
+MISS te39
+MISS te40
+MISS te41
+MISS te42
+MISS te43
+MISS te44
+MISS te45
+MISS te46
+MISS te47
+MISS te48
+HIT te49 w/ (lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) $0)) ; log prior = -3.399621 ; log likelihood = 0.000000
+HIT te50 w/ (lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) $0)) ; log prior = -3.247207 ; log likelihood = 0.000000
+MISS te51
+MISS te52
+MISS te53
+MISS te54
+HIT te55 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) $0)) ; log prior = -2.901156 ; log likelihood = 0.000000
+MISS te56
+MISS te57
+MISS te58
+HIT te59 w/ (lambda (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)))) $0)) ; log prior = -4.651098 ; log likelihood = 0.000000
+MISS te60
+MISS te61
+MISS te62
+MISS te63
+MISS te64
+HIT te65 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0))) $0)) ; log prior = -4.248543 ; log likelihood = 0.000000
+MISS te66
+HIT te67 w/ (lambda (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) (mathDomain_addzero $0 mathDomain_4))) $0)) ; log prior = -5.031127 ; log likelihood = 0.000000
+MISS te68
+HIT te69 w/ (lambda (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0))) $0)) ; log prior = -4.276338 ; log likelihood = 0.000000
+MISS te70
+HIT te71 w/ (lambda (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0))) $0)) ; log prior = -4.270361 ; log likelihood = 0.000000
+MISS te72
+MISS te73
+MISS te74
+MISS te75
+MISS te76
+MISS te77
+MISS te78
+HIT te79 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)))) $0))) ; log prior = -6.736934 ; log likelihood = 0.000000
+MISS te80
+MISS te81
+HIT te82 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0))) $0)) ; log prior = -4.158690 ; log likelihood = 0.000000
+MISS te83
+MISS te84
+HIT te85 w/ (lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) $0)) ; log prior = -3.389874 ; log likelihood = 0.000000
+MISS te86
+HIT te87 w/ (lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_rrotate $0 mathDomain_4))) ; log prior = -7.336053 ; log likelihood = 0.000000
+MISS te88
+MISS te89
+MISS te90
+MISS te91
+MISS te92
+MISS te93
+HIT te94 w/ (lambda (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0))) $0)) ; log prior = -4.284635 ; log likelihood = 0.000000
+MISS te95
+MISS te96
+MISS te97
+HIT te98 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) $0)) ; log prior = -2.926754 ; log likelihood = 0.000000
+HIT te99 w/ (lambda (#(lambda (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)))) (mathDomain_swap (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0) mathDomain_1))) $0)) ; log prior = -5.726176 ; log likelihood = 0.000000
+HIT te100 w/ (lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) $0)) ; log prior = -3.394086 ; log likelihood = 0.000000
+MISS te101
+HIT te102 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) (mathDomain_rrotate $0 mathDomain_4))) ; log prior = -6.976519 ; log likelihood = 0.000000
+HIT te103 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0))) $0))) ; log prior = -7.589292 ; log likelihood = 0.000000
+MISS te104
+HIT te105 w/ (lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) $0)) ; log prior = -3.220366 ; log likelihood = 0.000000
+MISS te106
+MISS te107
+MISS te108
+MISS te109
+MISS te110
+HIT te111 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) $0)) ; log prior = -2.919096 ; log likelihood = 0.000000
+MISS te112
+MISS te113
+MISS te114
+MISS te115
+MISS te116
+MISS te117
+MISS te118
+MISS te119
+MISS te120
+MISS te121
+MISS te122
+MISS te123
+HIT te124 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)) ; log prior = -3.569159 ; log likelihood = 0.000000
+MISS te125
+MISS te126
+MISS te127
+MISS te128
+HIT te129 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0))) $0))) ; log prior = -6.174771 ; log likelihood = 0.000000
+MISS te130
+MISS te131
+MISS te132
+HIT te133 w/ (lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) $0)) ; log prior = -3.301929 ; log likelihood = 0.000000
+MISS te134
+MISS te135
+MISS te136
+MISS te137
+MISS te138
+MISS te139
+MISS te140
+MISS te141
+MISS te142
+MISS te143
+MISS te144
+HIT te145 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)))) $0))) ; log prior = -6.701846 ; log likelihood = 0.000000
+MISS te146
+MISS te147
+MISS te148
+MISS te149
+MISS te150
+MISS te151
+MISS te152
+HIT te153 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) $0)) ; log prior = -2.867804 ; log likelihood = 0.000000
+MISS te154
+MISS te155
+MISS te156
+MISS te157
+MISS te158
+MISS te159
+MISS te160
+MISS te161
+MISS te162
+HIT te163 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) (#(lambda (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)))) (mathDomain_swap (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0) mathDomain_1))) $0))) ; log prior = -8.949100 ; log likelihood = 0.000000
+MISS te164
+MISS te165
+MISS te166
+MISS te167
+MISS te168
+MISS te169
+MISS te170
+HIT te171 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) $0)) ; log prior = -4.801313 ; log likelihood = 0.000000
+MISS te172
+MISS te173
+MISS te174
+MISS te175
+MISS te176
+MISS te177
+MISS te178
+MISS te179
+MISS te180
+MISS te181
+MISS te182
+MISS te183
+MISS te184
+HIT te185 w/ (lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) $0)) ; log prior = -3.247109 ; log likelihood = 0.000000
+MISS te186
+HIT te187 w/ (lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) $0)) ; log prior = -3.316606 ; log likelihood = 0.000000
+MISS te188
+MISS te189
+HIT te190 w/ (lambda (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0))) $0)) ; log prior = -4.270517 ; log likelihood = 0.000000
+MISS te191
+MISS te192
+MISS te193
+MISS te194
+MISS te195
+HIT te196 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) $0)) ; log prior = -2.866240 ; log likelihood = 0.000000
+MISS te197
+MISS te198
+HIT te199 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) $0))) ; log prior = -8.480917 ; log likelihood = 0.000000
+MISS te200
+MISS te201
+MISS te202
+MISS te203
+MISS te204
+MISS te205
+MISS te206
+MISS te207
+MISS te208
+MISS te209
+MISS te210
+MISS te211
+MISS te212
+MISS te213
+MISS te214
+MISS te215
+MISS te216
+MISS te217
+MISS te218
+MISS te219
+HIT te220 w/ (lambda (#(lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)))) $0)) ; log prior = -4.655258 ; log likelihood = 0.000000
+MISS te221
+MISS te222
+MISS te223
+HIT te224 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)) ; log prior = -3.637249 ; log likelihood = 0.000000
+MISS te225
+MISS te226
+MISS te227
+MISS te228
+HIT te229 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0))) $0)) ; log prior = -4.150452 ; log likelihood = 0.000000
+MISS te230
+MISS te231
+MISS te232
+MISS te233
+MISS te234
+MISS te235
+MISS te236
+MISS te237
+MISS te238
+MISS te239
+MISS te240
+MISS te241
+MISS te242
+MISS te243
+HIT te244 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0))) $0)) ; log prior = -4.105358 ; log likelihood = 0.000000
+MISS te245
+MISS te246
+MISS te247
+MISS te248
+MISS te249
+MISS te250
+MISS te251
+MISS te252
+HIT te253 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_mult $0 mathDomain_4) mathDomain_4))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) (mathDomain_swap $0 mathDomain_1))))) $0)) ; log prior = -2.894889 ; log likelihood = 0.000000
+MISS te254
+HIT te255 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0))) $0)) ; log prior = -4.105798 ; log likelihood = 0.000000
+MISS te256
+MISS te257
+MISS te258
+MISS te259
+MISS te260
+HIT te261 w/ (lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) $0)) ; log prior = -3.265839 ; log likelihood = 0.000000
+MISS te262
+HIT te263 w/ (lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) $0)) ; log prior = -3.480047 ; log likelihood = 0.000000
+MISS te264
+HIT te265 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0))) (mathDomain_rrotate (mathDomain_add (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_swap $0 mathDomain_0))) $0))) $0) mathDomain_4) mathDomain_4))) ; log prior = -16.491490 ; log likelihood = 0.000000
+HIT te266 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)) ; log prior = -3.583812 ; log likelihood = 0.000000
+MISS te267
+MISS te268
+MISS te269
+MISS te270
+HIT te271 w/ (lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) $0)) ; log prior = -3.234715 ; log likelihood = 0.000000
+HIT te272 w/ (lambda (#(lambda (#(lambda (#(lambda (mathDomain_simplify $0 mathDomain_0)) (mathDomain_dist $0 mathDomain_1))) (mathDomain_rrotate (mathDomain_sub $0 mathDomain_5) mathDomain_1))) $0)) ; log prior = -3.639109 ; log likelihood = 0.000000
+HIT te273 w/ (lambda $0) ; log prior = -0.774091 ; log likelihood = 0.000000
+MISS te274
+MISS te275
+MISS te276
+MISS te277
+MISS te278
+MISS te279
+MISS te280
+MISS te281
+MISS te282
+HIT te283 w/ (lambda $0) ; log prior = -0.776198 ; log likelihood = 0.000000
