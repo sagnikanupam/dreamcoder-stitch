@@ -8,6 +8,7 @@ import subprocess
 
 
 def multicoreEnumeration(g, tasks, _=None,
+                         args = None,
                          enumerationTimeout=None,
                          solver='ocaml',
                          CPUs=1,
@@ -60,7 +61,7 @@ def multicoreEnumeration(g, tasks, _=None,
 
     disableParallelism = len(jobs) == 1 or CPUs == 1
     parallelCallback = launchParallelProcess if not disableParallelism else lambda f, * \
-        a, **k: f(*a, **k)
+        a, **k: wrapInThread(f)(*a, **k)
     if disableParallelism:
         eprint("Disabling parallelism on the Python side because we only have one job.")
         eprint("If you are using ocaml, there could still be parallelism.")
@@ -151,10 +152,11 @@ def multicoreEnumeration(g, tasks, _=None,
                 g, request = j[:2]
                 bi = budgetIncrement(lowerBounds[j])
                 thisTimeout = enumerationTimeout - stopwatches[j].elapsed
-                eprint("(python) Launching %s (%d tasks) w/ %d CPUs. %f <= MDL < %f. Timeout %f." %
-                       (request, len(jobs[j]), allocation[j], lowerBounds[j], lowerBounds[j] + bi, thisTimeout))
+                #eprint("(python) Launching %s (%d tasks) w/ %d CPUs. %f <= MDL < %f. Timeout %f." %
+                #       (request, len(jobs[j]), allocation[j], lowerBounds[j], lowerBounds[j] + bi, thisTimeout))
                 stopwatches[j].start()
-                parallelCallback(wrapInThread(solver),
+                parallelCallback(solver,
+                                 args=args,
                                  q=q, g=g, ID=nextID,
                                  elapsedTime=stopwatches[j].elapsed,
                                  CPUs=allocation[j],
@@ -252,7 +254,9 @@ def wrapInThread(f):
     return _f
 
 OCAML_TEST_FLAG = "is_ocaml_test" # Indicates a JSON response intended for testing.
-def solveForTask_ocaml(_=None,
+def solveForTask_ocaml(
+    _=None,
+                    args=None,
                        elapsedTime=0.,
                        CPUs=1,
                        g=None, tasks=None,
@@ -266,6 +270,25 @@ def solveForTask_ocaml(_=None,
                        max_mem_per_enumeration_thread=1000000):
 
     import json
+    
+    from dreamcoder.domains.cube.cubePrimitives import cubePrimitives
+    from dreamcoder.domains.mathDomain.mathDomainPrimitives import mathDomainPrimitives
+    # updates the global PRIMITIVES list in case we're on mac so we did a multithreading spawn instead of a fork
+    {"cube": cubePrimitives}["cube"]() 
+    {"mathDomain": mathDomainPrimitives}["mathDomain"]()
+    
+
+    '''    
+    from dreamcoder.domains.list.listPrimitives import basePrimitives, primitives, McCarthyPrimitives, bootstrapTarget_extra, no_length
+
+    # updates the global PRIMITIVES list in case we're on mac so we did a multithreading spawn instead of a fork
+    
+    {"base": basePrimitives,
+    "McCarthy": McCarthyPrimitives,
+    "common": bootstrapTarget_extra,
+    "noLength": no_length,
+    "rich": primitives}[args["primitives"]]() 
+    '''
 
     def taskMessage(t):
         serialized_examples = []
