@@ -15,8 +15,8 @@ class StringFeatureExtractor(RecurrentFeatureExtractor):
     special = None
     def tokenize(self, examples):
         def tokenize_example(xs, y):
-            x_chars = [list(word) for word in xs]
-            y_chars = list(y)
+            x_chars = [list(str(word)) for word in xs]
+            y_chars = list(str(y))
             return x_chars, y_chars
             
         return [tokenize_example(*e) for e in examples] 
@@ -24,7 +24,8 @@ class StringFeatureExtractor(RecurrentFeatureExtractor):
     def __init__(self, tasks, testingTasks=[], cuda=False):
         self.recomputeTasks = True
         punctuation = [".", "(", ")", "|", "^", "[", "]"]
-        lexicon = [str(chr(ord('a') + j)) for j in range(26)] + punctuation
+        math = ["=", "/", "*", "+", "-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", " "]
+        lexicon = [str(chr(ord('a') + j)) for j in range(26)] + punctuation + math #remove math symbols if using for re2 domain
         super(StringFeatureExtractor, self).__init__(lexicon=lexicon,
                                                       H=64,
                                                       tasks=tasks,
