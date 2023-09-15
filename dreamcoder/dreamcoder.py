@@ -609,7 +609,8 @@ def ecIterator(grammar, tasks,
         eprint("Using a waking task batch of size: " + str(len(wakingTaskBatch)))
 
         # WAKING UP
-        if useDSL and enumerationTimeout > 0:
+        if useDSL:
+            #and enumerationTimeout > 0:
             enumeration_time = enumerationTimeout
             if initialTimeout is not None and initialTimeoutIterations is not None:
                 if j < initialTimeoutIterations:
@@ -646,7 +647,8 @@ def ecIterator(grammar, tasks,
         
         #### Recognition model round 0. No language.
         result.models = [] # Reset the list of models at each iteration.
-        if len(recognition_0) > 0 and recognitionTimeout > 0:
+        if len(recognition_0) > 0:
+            #and recognitionTimeout > 0:
             result.tasksAttempted.update(wakingTaskBatch)
             recognition_iteration = 0
             # Should we initialize the weights to be what they were before?

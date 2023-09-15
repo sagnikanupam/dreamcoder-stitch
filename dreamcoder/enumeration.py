@@ -395,7 +395,7 @@ def solveForTask_ocaml(
 
 def solveForTask_pypy(_=None,
                       elapsedTime=0.,
-                      g=None, tasks=None,
+                      g=None, task=None,
                       lowerBound=None, upperBound=None, budgetIncrement=None,
                       timeout=None,
                       likelihoodModel=None,
