@@ -61,7 +61,7 @@ def multicoreEnumeration(g, tasks, _=None,
 
     disableParallelism = len(jobs) == 1 or CPUs == 1
     parallelCallback = launchParallelProcess if not disableParallelism else lambda f, * \
-        a, **k: f(*a, **k)
+        a, **k: wrapInThread(f)(*a, **k)
     if disableParallelism:
         eprint("Disabling parallelism on the Python side because we only have one job.")
         eprint("If you are using ocaml, there could still be parallelism.")
