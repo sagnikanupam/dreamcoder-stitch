@@ -284,6 +284,8 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     stitch_kwargs = stitch_core.from_dreamcoder(dreamcoder_json)
     stitch_kwargs.update(dict(eta_long=True, utility_by_rewrite=True))
 
+    print("This is what stitch kwargs look like: " + str(stitch_kwargs))
+
     # Actually run Stitch.
     compress_result = stitch_core.compress(**stitch_kwargs, iterations=max_compression, max_arity=a)
 

@@ -15,7 +15,7 @@ from dreamcoder.utilities import numberOfCPUs
 from dreamcoder.domains.re2.main import StringFeatureExtractor
 from dreamcoder.domains.mathDomain.mathDomainPrimitives import mathDomainPrimitives
 
-TRAINING_DATASET_FILEPATHS = [Path.cwd()/'data'/'mathDomain'/'conpoleDatasetPrefix.csv']
+TRAINING_DATASET_FILEPATHS = [Path.cwd()/'data'/'mathDomain'/'conpoleDatasetToy.csv']
 
 #print(f"Training Dataset From: {TRAINING_DATASET_FILEPATHS}")
 #Check Header on Training Dataset before passing as argument
@@ -25,7 +25,7 @@ NUM_TR = training_data.shape[0] #number of training examples
 #print(f"Number of Equations Used For Training: {NUM_TR}")
 #print(training_data)
 
-TESTING_DATASET_FILEPATH = Path.cwd()/'data'/'mathDomain'/'conpoleDatasetPrefix.csv'
+TESTING_DATASET_FILEPATH = Path.cwd()/'data'/'mathDomain'/'conpoleDatasetToy.csv'
 #print(f"Testing Dataset From: {TESTING_DATASET_FILEPATH}")
 testing_data = pd.read_csv(TESTING_DATASET_FILEPATH) #pandas dataframe containing testing data
 NUM_TE = testing_data.shape[0] #number of training examples
