@@ -33,6 +33,7 @@ class ECResult():
                  hitsAtEachWake=None,
                  timesAtEachWake=None,
                  allFrontiers=None,
+                 weights = None,
                  taskLanguage=None,
                  tasksAttempted=None,):
         self.frontiersOverTime = {} # Map from task to [frontier at iteration 1, frontier at iteration 2, ...]
@@ -53,6 +54,7 @@ class ECResult():
         self.sumMaxll = sumMaxll or [] #TODO name change 
         self.testingSumMaxll = testingSumMaxll or [] #TODO name change
         self.allFrontiers = allFrontiers or {}
+        self.weights = weights or {} #Weights of tasks that need to be solved with higher priority
         self.taskLanguage = taskLanguage or {} # Maps from task names to language.
         self.models = models or [] # List of recognition models.
         self.tasksAttempted = tasksAttempted or set() # Tasks we have attempted so far.
@@ -417,6 +419,7 @@ def ecIterator(grammar, tasks,
         resume = len(result.grammars) - 1
         eprint("Loaded checkpoint from", path)
         grammar = result.grammars[-1] if result.grammars else grammar
+        weights = result.weights # REMEMBER TO SAVE WEIGHTS WHEN WRITING TO RESULTS FILE
         # Backward compatability if we weren't tracking attempted tasks.
         if not hasattr(result, 'tasksAttempted'): result.tasksAttempted = set()
     
@@ -431,8 +434,11 @@ def ecIterator(grammar, tasks,
             if t not in result.taskSolutions:
                 result.taskSolutions[t] = Frontier([],
                             task=t)
+                result.weights[t] = 1.0
             if t not in result.allFrontiers:
                 result.allFrontiers[t] =  Frontier([],task=t)
+                result.weights[t] = 1.0
+        print("Printing result.taskLanguage" + str(result.taskLanguage)) #SAGNIK DEBUGGING STATEMENT
         for t in tasks + testingTasks:
             if t.name not in result.taskLanguage:
                 result.taskLanguage[t.name] = []
@@ -450,6 +456,7 @@ def ecIterator(grammar, tasks,
                           allFrontiers={
                               t: Frontier([],
                                           task=t) for t in tasks},
+                          weights={t: 1.0 for t in tasks}, 
                           taskLanguage={
                               t.name: [] for t in tasks + testingTasks},
                           tasksAttempted=set())
@@ -824,7 +831,7 @@ def ecIterator(grammar, tasks,
                         output_dir = translation_info["output_dir"]
                 language_alignments = get_alignments(grammar=grammar, output_dir=output_dir)
                 
-            grammar = consolidate(result, grammar, topK=topK, pseudoCounts=pseudoCounts, arity=arity, aic=aic,
+            grammar, weights = consolidate(result, grammar, weights=weights, topK=topK, pseudoCounts=pseudoCounts, arity=arity, aic=aic,
                                   structurePenalty=structurePenalty, compressor=compressor, CPUs=CPUs,
                                   iteration=j, language_alignments=language_alignments,
                                   lc_score=lc_score,
@@ -1177,7 +1184,7 @@ def sleep_recognition(result, grammar, taskBatch, tasks, testingTasks, allFronti
                "\tstandard deviation", int(standardDeviation(ensembleTimes[bestRecognizer]) + 0.5))
     return totalTasksHitBottomUp
 
-def consolidate(result, grammar, _=None, topK=None, arity=None, pseudoCounts=None, aic=None,
+def consolidate(result, grammar, weights=None, _=None, topK=None, arity=None, pseudoCounts=None, aic=None,
                 structurePenalty=None, compressor=None, CPUs=None, iteration=None, language_alignments=None, lc_score=0.0,
                 max_compression=1000):
     eprint("Showing the top 5 programs in each frontier being sent to the compressor:")
@@ -1198,7 +1205,7 @@ def consolidate(result, grammar, _=None, topK=None, arity=None, pseudoCounts=Non
     if len([f for f in compressionFrontiers if not f.empty]) == 0:
         eprint("No compression frontiers; not inducing a grammar this iteration.")
     else:
-        grammar, compressionFrontiers = induceGrammar(grammar, compressionFrontiers,
+        grammar, compressionFrontiers, weights = induceGrammar(grammar, compressionFrontiers, weights = weights,
                                                       topK=topK,
                                                       pseudoCounts=pseudoCounts, a=arity,
                                                       aic=aic, structurePenalty=structurePenalty,
@@ -1216,7 +1223,7 @@ def consolidate(result, grammar, _=None, topK=None, arity=None, pseudoCounts=Non
     eprint("Grammar after iteration %d:" % (iteration + 1))
     eprint(grammar)
     
-    return grammar
+    return (grammar, weights)
     
 
 

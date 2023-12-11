@@ -17,9 +17,10 @@ from dreamcoder.translation import serialize_language_alignments
 from dreamcoder.type import Type
 
 def induceGrammar(*args, **kwargs):
+    weights = kwargs["weights"]
     if sum(not f.empty for f in args[1]) == 0:
         eprint("No nonempty frontiers, exiting grammar induction early.")
-        return args[0], args[1]
+        return args[0], args[1], weights
     with timing("Induced a grammar"):
         backend = kwargs.pop("backend", "pypy")
         if backend == "pypy":
@@ -46,10 +47,10 @@ def induceGrammar(*args, **kwargs):
             g, newFrontiers = ocamlInduce(*args, **kwargs)
         elif backend == "stitch":
             grammar, frontiers = args
-            g, newFrontiers = stitchInduce(grammar, frontiers, **kwargs)
+            g, newFrontiers, weights = stitchInduce(grammar, frontiers, **kwargs)
         else:
             assert False, "unknown compressor"
-    return g, newFrontiers
+    return g, newFrontiers, weights
 
 
 def pypyInduce(*args, **kwargs):
@@ -265,8 +266,10 @@ def rustInduce(g0, frontiers, _=None,
     return g, newFrontiers
 
 
-def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_compression=3, **kwargs):
+def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_compression=3, weights=None, **kwargs):
     """Compresses the library, generating a new grammar based on the frontiers, using Stitch."""
+
+    print("This is what weights looks like when stitchInduce is called: " + str(weights)) #SAGNIK DEBUGGING PRINT STATEMENT
 
     def grammar_from_json(grammar_json: dict) -> Grammar:
         """Creates a grammar object from a JSON representation of the grammar."""
@@ -287,7 +290,13 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     print("This is what stitch kwargs look like: " + str(stitch_kwargs))
 
     # Actually run Stitch.
-    compress_result = stitch_core.compress(**stitch_kwargs, iterations=max_compression, max_arity=a)
+    if weights!=None:
+        weights_list = []
+        for i in range(len(stitch_kwargs['programs'])):
+            weights_list.append(weights[stitch_kwargs['tasks']])
+        compress_result = stitch_core.compress(**stitch_kwargs, iterations=max_compression, max_arity=a, weights=weights_list)
+    else:
+        compress_result = stitch_core.compress(**stitch_kwargs, iterations=max_compression, max_arity=a) 
 
     # TODO: Post-hoc filter the abstractions to remove those that are not that useful since Stitch does
     # not currently have a stopping condition (so it will always return max_compression inventions).
@@ -321,4 +330,6 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     # Rescore the frontiers.
     new_frontiers = [new_grammar.rescoreFrontier(frontier) for frontier in task_to_unscored_frontier.values()]
 
-    return new_grammar, new_frontiers
+    print("New Frontiers Looks Like: " + str(new_frontiers)) #SAGNIK DEBUGGING PRINT STATEMENT
+
+    return new_grammar, new_frontiers, weights
