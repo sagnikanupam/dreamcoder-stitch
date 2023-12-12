@@ -831,7 +831,7 @@ def ecIterator(grammar, tasks,
                         output_dir = translation_info["output_dir"]
                 language_alignments = get_alignments(grammar=grammar, output_dir=output_dir)
                 
-            grammar, weights = consolidate(result, grammar, weights=weights, topK=topK, pseudoCounts=pseudoCounts, arity=arity, aic=aic,
+            grammar, result.weights = consolidate(result, grammar, weights=result.weights, topK=topK, pseudoCounts=pseudoCounts, arity=arity, aic=aic,
                                   structurePenalty=structurePenalty, compressor=compressor, CPUs=CPUs,
                                   iteration=j, language_alignments=language_alignments,
                                   lc_score=lc_score,
