@@ -293,7 +293,7 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     if weights!=None:
         weights_list = []
         for i in range(len(stitch_kwargs['programs'])):
-            weights_list.append(weights[stitch_kwargs['tasks']])
+            weights_list.append(weights[stitch_kwargs['tasks'][i]])
         compress_result = stitch_core.compress(**stitch_kwargs, iterations=max_compression, max_arity=a, weights=weights_list)
     else:
         compress_result = stitch_core.compress(**stitch_kwargs, iterations=max_compression, max_arity=a) 

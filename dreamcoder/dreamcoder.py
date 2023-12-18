@@ -456,7 +456,7 @@ def ecIterator(grammar, tasks,
                           allFrontiers={
                               t: Frontier([],
                                           task=t) for t in tasks},
-                          weights={t: 1.0 for t in tasks}, 
+                          weights={str(t): 1.0 for t in tasks}, 
                           taskLanguage={
                               t.name: [] for t in tasks + testingTasks},
                           tasksAttempted=set())
