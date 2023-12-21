@@ -294,6 +294,7 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
         weights_list = []
         for i in range(len(stitch_kwargs['programs'])):
             weights_list.append(weights[stitch_kwargs['tasks'][i]])
+        print("This is what weights_list looks like: " + weights_list)
         compress_result = stitch_core.compress(**stitch_kwargs, iterations=max_compression, max_arity=a, weights=weights_list)
     else:
         compress_result = stitch_core.compress(**stitch_kwargs, iterations=max_compression, max_arity=a) 
@@ -304,7 +305,7 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     # If we didn't find any new abstractions, return the old grammar.
     # stitch_core.rewrite throws an error if no abstractions are provided.
     if len(compress_result.abstractions) == 0:
-        return grammar, frontiers
+        return grammar, frontiers, weights
     
     # Get list of task objects in the same order as the rewritten programs.
     rewritten_progs = stitch_core.rewrite(abstractions=compress_result.abstractions, **stitch_kwargs)
