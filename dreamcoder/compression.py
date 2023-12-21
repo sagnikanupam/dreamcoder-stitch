@@ -321,14 +321,13 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
         print("\n The total number of rewritten and original programs match.")
         total_programs_for_tasks = {taskname: value for (taskname, value) in zip(stitch_kwargs["tasks"], [0]*len(stitch_kwargs["tasks"]))}
         modified_programs_for_tasks = {taskname: value for (taskname, value) in zip(stitch_kwargs["tasks"], [0]*len(stitch_kwargs["tasks"]))}
-        for program_index in len(originals_dc):
+        for program_index in range(len(originals_dc)):
             task_name = stitch_kwargs["tasks"][program_index]
             total_programs_for_tasks[task_name]+=1
             if originals_dc[program_index] != rewritten_dc[program_index]:
                 modified_programs_for_tasks+=1
         for task in total_programs_for_tasks.keys():
             weights[task] -= modified_programs_for_tasks/total_programs_for_tasks
-
 
     task_strings = stitch_kwargs.pop("tasks", [])   # Same order as rewritten_dc.
     str_to_task = {str(frontier.task): frontier.task for frontier in frontiers}
