@@ -309,12 +309,26 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     
     # Get list of task objects in the same order as the rewritten programs.
     rewritten_progs = stitch_core.rewrite(abstractions=compress_result.abstractions, **stitch_kwargs)
-    print("These are rewritten_progs.rewritten: " + str(rewritten_progs.rewritten))
-    print("These are rewritten_progs.json: " + str(rewritten_progs.json))
+    print("\n These are rewritten_progs.rewritten: " + str(rewritten_progs.rewritten))
+    print("\n These are rewritten_progs.json: " + str(rewritten_progs.json))
     name_mapping = stitch_core.name_mapping_dreamcoder(dreamcoder_json) + stitch_core.name_mapping_stitch(compress_result.json)
-    print("These are name_mappings: " + str(name_mapping))
+    print("\n These are name_mappings: " + str(name_mapping))
     rewritten_dc = stitch_core.stitch_to_dreamcoder(rewritten_progs.rewritten, name_mapping)
-    print("These are rewritten_dc: "+str(rewritten_dc))
+    print("\n These are rewritten_dc: "+str(rewritten_dc))
+    originals_dc = stitch_core.stitch_to_dreamcoder(stitch_kwargs['programs'], name_mapping)
+    
+    if len(rewritten_dc) == len(originals_dc):
+        print("\n The total number of rewritten and original programs match.")
+        total_programs_for_tasks = {taskname: value for (taskname, value) in zip(stitch_kwargs["tasks"], [0]*len(stitch_kwargs["tasks"]))}
+        modified_programs_for_tasks = {taskname: value for (taskname, value) in zip(stitch_kwargs["tasks"], [0]*len(stitch_kwargs["tasks"]))}
+        for program_index in len(originals_dc):
+            task_name = stitch_kwargs["tasks"][program_index]
+            total_programs_for_tasks[task_name]+=1
+            if originals_dc[program_index] != rewritten_dc[program_index]:
+                modified_programs_for_tasks+=1
+        for task in total_programs_for_tasks.keys():
+            weights[task] -= modified_programs_for_tasks/total_programs_for_tasks
+
 
     task_strings = stitch_kwargs.pop("tasks", [])   # Same order as rewritten_dc.
     str_to_task = {str(frontier.task): frontier.task for frontier in frontiers}
@@ -335,6 +349,6 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     # Rescore the frontiers.
     new_frontiers = [new_grammar.rescoreFrontier(frontier) for frontier in task_to_unscored_frontier.values()]
 
-    print("New Frontiers Looks Like: " + str(new_frontiers)) #SAGNIK DEBUGGING PRINT STATEMENT
+    print("\n New Frontiers Looks Like: " + str(new_frontiers)) #SAGNIK DEBUGGING PRINT STATEMENT
 
     return new_grammar, new_frontiers, weights
