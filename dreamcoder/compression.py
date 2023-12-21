@@ -325,7 +325,7 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
             task_name = stitch_kwargs["tasks"][program_index]
             total_programs_for_tasks[task_name]+=1
             if originals_dc[program_index] != rewritten_dc[program_index]:
-                modified_programs_for_tasks+=1
+                modified_programs_for_tasks[task_name]+=1
         for task in total_programs_for_tasks.keys():
             weights[task] -= modified_programs_for_tasks/total_programs_for_tasks
 
@@ -349,5 +349,6 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     new_frontiers = [new_grammar.rescoreFrontier(frontier) for frontier in task_to_unscored_frontier.values()]
 
     print("\n New Frontiers Looks Like: " + str(new_frontiers)) #SAGNIK DEBUGGING PRINT STATEMENT
+    print("\n New Weights look like: "+str(weights))
 
     return new_grammar, new_frontiers, weights
