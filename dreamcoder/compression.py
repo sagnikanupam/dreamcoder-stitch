@@ -309,7 +309,8 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     
     # Get list of task objects in the same order as the rewritten programs.
     rewritten_progs = stitch_core.rewrite(abstractions=compress_result.abstractions, **stitch_kwargs)
-    print("These are rewritten_progs: " + str(rewritten_progs))
+    print("These are rewritten_progs.rewritten: " + str(rewritten_progs.rewritten))
+    print("These are rewritten_progs.json: " + str(rewritten_progs.json))
     name_mapping = stitch_core.name_mapping_dreamcoder(dreamcoder_json) + stitch_core.name_mapping_stitch(compress_result.json)
     print("These are name_mappings: " + str(name_mapping))
     rewritten_dc = stitch_core.stitch_to_dreamcoder(rewritten_progs.rewritten, name_mapping)
