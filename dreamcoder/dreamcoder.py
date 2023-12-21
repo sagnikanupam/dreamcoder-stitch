@@ -434,10 +434,10 @@ def ecIterator(grammar, tasks,
             if t not in result.taskSolutions:
                 result.taskSolutions[t] = Frontier([],
                             task=t)
-                result.weights[t] = 1.0
+                result.weights[t] = iterations
             if t not in result.allFrontiers:
                 result.allFrontiers[t] =  Frontier([],task=t)
-                result.weights[t] = 1.0
+                result.weights[t] = iterations
         print("Printing result.taskLanguage" + str(result.taskLanguage)) #SAGNIK DEBUGGING STATEMENT
         for t in tasks + testingTasks:
             if t.name not in result.taskLanguage:
@@ -456,7 +456,7 @@ def ecIterator(grammar, tasks,
                           allFrontiers={
                               t: Frontier([],
                                           task=t) for t in tasks},
-                          weights={str(t): 1.0 for t in tasks}, 
+                          weights={str(t): iterations for t in tasks}, 
                           taskLanguage={
                               t.name: [] for t in tasks + testingTasks},
                           tasksAttempted=set())
