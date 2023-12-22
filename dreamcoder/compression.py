@@ -266,7 +266,7 @@ def rustInduce(g0, frontiers, _=None,
     return g, newFrontiers
 
 
-def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_compression=3, weights=None, **kwargs):
+def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_compression=3, weights=None, iterations=None, **kwargs):
     """Compresses the library, generating a new grammar based on the frontiers, using Stitch."""
 
     print("This is what weights looks like when stitchInduce is called: " + str(weights)) #SAGNIK DEBUGGING PRINT STATEMENT
@@ -327,7 +327,7 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
             if originals_dc[program_index] != rewritten_dc[program_index]:
                 modified_programs_for_tasks[task_name]+=1
         for task in total_programs_for_tasks.keys():
-            weights[task] -= modified_programs_for_tasks[task]/total_programs_for_tasks[task]
+            weights[task] -= (modified_programs_for_tasks[task]/total_programs_for_tasks[task])/iterations
 
     task_strings = stitch_kwargs.pop("tasks", [])   # Same order as rewritten_dc.
     str_to_task = {str(frontier.task): frontier.task for frontier in frontiers}
