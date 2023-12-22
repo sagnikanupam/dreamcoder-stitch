@@ -434,10 +434,10 @@ def ecIterator(grammar, tasks,
             if t not in result.taskSolutions:
                 result.taskSolutions[t] = Frontier([],
                             task=t)
-                result.weights[t] = iterations
+                result.weights[t] = 1.0
             if t not in result.allFrontiers:
                 result.allFrontiers[t] =  Frontier([],task=t)
-                result.weights[t] = iterations
+                result.weights[t] = 1.0
         print("Printing result.taskLanguage" + str(result.taskLanguage)) #SAGNIK DEBUGGING STATEMENT
         for t in tasks + testingTasks:
             if t.name not in result.taskLanguage:
@@ -456,7 +456,7 @@ def ecIterator(grammar, tasks,
                           allFrontiers={
                               t: Frontier([],
                                           task=t) for t in tasks},
-                          weights={str(t): iterations for t in tasks}, 
+                          weights={str(t): 1.0 for t in tasks}, 
                           taskLanguage={
                               t.name: [] for t in tasks + testingTasks},
                           tasksAttempted=set())
@@ -831,7 +831,7 @@ def ecIterator(grammar, tasks,
                         output_dir = translation_info["output_dir"]
                 language_alignments = get_alignments(grammar=grammar, output_dir=output_dir)
                 
-            grammar, result.weights = consolidate(result, grammar, weights=result.weights, topK=topK, pseudoCounts=pseudoCounts, arity=arity, aic=aic,
+            grammar, result.weights = consolidate(result, grammar, weights=result.weights, iterations=iterations, topK=topK, pseudoCounts=pseudoCounts, arity=arity, aic=aic,
                                   structurePenalty=structurePenalty, compressor=compressor, CPUs=CPUs,
                                   iteration=j, language_alignments=language_alignments,
                                   lc_score=lc_score,
@@ -1184,7 +1184,7 @@ def sleep_recognition(result, grammar, taskBatch, tasks, testingTasks, allFronti
                "\tstandard deviation", int(standardDeviation(ensembleTimes[bestRecognizer]) + 0.5))
     return totalTasksHitBottomUp
 
-def consolidate(result, grammar, weights=None, _=None, topK=None, arity=None, pseudoCounts=None, aic=None,
+def consolidate(result, grammar, iterations=None, weights=None, _=None, topK=None, arity=None, pseudoCounts=None, aic=None,
                 structurePenalty=None, compressor=None, CPUs=None, iteration=None, language_alignments=None, lc_score=0.0,
                 max_compression=1000):
     eprint("Showing the top 5 programs in each frontier being sent to the compressor:")
@@ -1205,7 +1205,7 @@ def consolidate(result, grammar, weights=None, _=None, topK=None, arity=None, ps
     if len([f for f in compressionFrontiers if not f.empty]) == 0:
         eprint("No compression frontiers; not inducing a grammar this iteration.")
     else:
-        grammar, compressionFrontiers, weights = induceGrammar(grammar, compressionFrontiers, weights = weights,
+        grammar, compressionFrontiers, weights = induceGrammar(grammar, compressionFrontiers, weights = weights, iterations=iterations,
                                                       topK=topK,
                                                       pseudoCounts=pseudoCounts, a=arity,
                                                       aic=aic, structurePenalty=structurePenalty,
