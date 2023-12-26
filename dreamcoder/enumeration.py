@@ -336,7 +336,7 @@ def solveForTask_ocaml(
         solver_file = tasks[0].specialSolver
 
     try:
-        print("This is the JSON message causing the enumeration error: "+str(message))
+        print("This is the JSON message causing the enumeration error: "+str(message["DSL"]))
         solver_file = os.path.join(get_root_dir(), solver_file)
         process = subprocess.Popen(solver_file,
                                    stdin=subprocess.PIPE,
