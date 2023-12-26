@@ -327,7 +327,8 @@ def solveForTask_ocaml(
 
     if hasattr(tasks[0], 'maxParameters') and tasks[0].maxParameters is not None:
         message["maxParameters"] = tasks[0].maxParameters
-
+    
+    print("This is the JSON message causing the enumeration error: "+str(message["DSL"]))
     message = json.dumps(message)
     # uncomment this if you want to save the messages being sent to the solver
     
@@ -336,7 +337,6 @@ def solveForTask_ocaml(
         solver_file = tasks[0].specialSolver
 
     try:
-        print("This is the JSON message causing the enumeration error: "+str(message["DSL"]))
         solver_file = os.path.join(get_root_dir(), solver_file)
         process = subprocess.Popen(solver_file,
                                    stdin=subprocess.PIPE,
