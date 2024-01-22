@@ -274,7 +274,7 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     def grammar_from_json(grammar_json: dict) -> Grammar:
         """Creates a grammar object from a JSON representation of the grammar."""
         grammar = grammar_json['DSL']
-        grammar = Grammar(grammar["0.0"],
+        grammar = Grammar(0.0,
             [(0.0, p.infer(), p)
                 for production in grammar["productions"]
                 for l in [production["logProbability"]]
