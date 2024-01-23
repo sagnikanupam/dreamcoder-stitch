@@ -266,12 +266,12 @@ def rustInduce(g0, frontiers, _=None,
     return g, newFrontiers
 
 
-def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_compression=3, weights=None, iterations=None, **kwargs):
+def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_compression=3, weights=None, iterations=None, pseudocounts=1.0, **kwargs):
     """Compresses the library, generating a new grammar based on the frontiers, using Stitch."""
 
     print("This is what weights looks like when stitchInduce is called: " + str(weights)) #SAGNIK DEBUGGING PRINT STATEMENT
 
-    def grammar_from_json(grammar_json: dict) -> Grammar:
+    def grammar_from_json(grammar_json: dict, frontiers) -> Grammar:
         """Creates a grammar object from a JSON representation of the grammar."""
         grammar = grammar_json['DSL']
         grammar = Grammar(0.0,
@@ -282,7 +282,9 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
             continuationType=Type.fromjson(grammar["continuationType"]) if "continuationType" in grammar else None)
         print("Pre-insideOutside Grammar:\n")
         print(grammar)
-        grammar = grammar.insideOutside()
+        print("Frontiers: \n")
+        print(frontiers)
+        grammar = grammar.insideOutside(frontiers, pseudocounts)
         print("Post-InsideOutside Grammar:\n")
         print(grammar)
         return grammar
@@ -350,7 +352,7 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     abstractions = compress_result.json['abstractions']
     dreamcoder_json['DSL']['productions'].extend(
         [{'logProbability': 0, 'expression': abs['dreamcoder']} for abs in abstractions])
-    new_grammar = grammar_from_json(dreamcoder_json)
+    new_grammar = grammar_from_json(dreamcoder_json, frontiers)
 
     # Rescore the frontiers.
     new_frontiers = [new_grammar.rescoreFrontier(frontier) for frontier in task_to_unscored_frontier.values()]
