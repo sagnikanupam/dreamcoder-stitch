@@ -280,6 +280,11 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
                 for l in [production["logProbability"]]
                 for p in [Program.parse(production["expression"])]],
             continuationType=Type.fromjson(grammar["continuationType"]) if "continuationType" in grammar else None)
+        print("Pre-insideOutside Grammar:\n")
+        print(grammar)
+        grammar = grammar.insideOutside()
+        print("Post-InsideOutside Grammar:\n")
+        print(grammar)
         return grammar
 
     # Parse the arguments for the Stitch compressor.
@@ -287,7 +292,7 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     stitch_kwargs = stitch_core.from_dreamcoder(dreamcoder_json)
     stitch_kwargs.update(dict(eta_long=True, utility_by_rewrite=True))
 
-    print("This is what stitch kwargs look like: " + str(stitch_kwargs))
+    #print("This is what stitch kwargs look like: " + str(stitch_kwargs))
 
     # Actually run Stitch.
     if weights!=None:
@@ -317,6 +322,7 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     #print("\n These are rewritten_dc: "+str(rewritten_dc))
     originals_dc = stitch_core.stitch_to_dreamcoder(stitch_kwargs['programs'], name_mapping)
     
+    '''
     if len(rewritten_dc) == len(originals_dc):
         #print("\n The total number of rewritten and original programs match.")
         total_programs_for_tasks = {taskname: value for (taskname, value) in zip(stitch_kwargs["tasks"], [0]*len(stitch_kwargs["tasks"]))}
@@ -328,6 +334,7 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
                 modified_programs_for_tasks[task_name]+=1
         for task in total_programs_for_tasks.keys():
             weights[task] -= (modified_programs_for_tasks[task]/total_programs_for_tasks[task])
+    '''
 
     task_strings = stitch_kwargs.pop("tasks", [])   # Same order as rewritten_dc.
     str_to_task = {str(frontier.task): frontier.task for frontier in frontiers}
@@ -348,7 +355,7 @@ def stitchInduce(grammar: Grammar, frontiers: List[Frontier], a: int = 3, max_co
     # Rescore the frontiers.
     new_frontiers = [new_grammar.rescoreFrontier(frontier) for frontier in task_to_unscored_frontier.values()]
 
-    print("\n New Frontiers Looks Like: " + str(new_frontiers)) #SAGNIK DEBUGGING PRINT STATEMENT
+    # print("\n New Frontiers Looks Like: " + str(new_frontiers)) #SAGNIK DEBUGGING PRINT STATEMENT
     print("\n New Weights look like: "+str(weights))
 
     return new_grammar, new_frontiers, weights
